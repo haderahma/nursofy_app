@@ -24,7 +24,7 @@ class NurseProfileScreen extends StatelessWidget {
                 backgroundImage: const AssetImage('assets/images/nurselayla.png'),
               ),
               const SizedBox(height: 12),
-              Text('Dr. Layla Hassan',
+              Text('Layla Hassan',
                   style: h5),
               const SizedBox(height: 4),
               Text('Registered Nurse\nCairo, Egypt',
@@ -38,7 +38,7 @@ class NurseProfileScreen extends StatelessWidget {
                   h8),
           const SizedBox(height: 8),
           Text(
-            'Dr. Layla Hassan is a highly experienced registered nurse with over 10 years of experience in home healthcare. She specializes in post-operative care, chronic disease management, and elderly care. Dr. Hassan is known for her compassionate approach and dedication to patient well-being.',
+            'Layla Hassan is a highly experienced registered nurse with over 10 years of experience in home healthcare. She specializes in post-operative care, chronic disease management, and elderly care. Dr. Hassan is known for her compassionate approach and dedication to patient well-being.',
             style: h6,
           ),
           const SizedBox(height: 16),
@@ -48,22 +48,24 @@ class NurseProfileScreen extends StatelessWidget {
           const SizedBox(height: 26),
             
           //??
-          Row(children: [
-            Text("Bachelor \nOf Science \nin Nursing",style: h9,),
-            SizedBox(width: 26,),
-            Column(
-              children: [
-                Text("Registered Nurse (RN)",style: h9),
-                 SizedBox(height: 12,),
-                Text("Egyptian Nursing Council",style:h6 ,)
-              ],
-            ),
-          ],),
-          Text(" Cairo\nUniversity",style:h6 ,),
-          Divider( endIndent: 370,),
+          Container(padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(color: const Color.fromARGB(255, 238, 241, 245),borderRadius: BorderRadius.circular(16)),
+             child: 
+              Column(crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Bachelor Of Science in Nursing",style: h9,),
+                  Text("Registered Nurse (RN)",style: h9),
+                   SizedBox(height: 12,),
+                  Text("Egyptian Nursing Council",style:h6 ,),
+                    Text(" Cairo University",style:h6 ,),
+          
           SizedBox(height: 20,),
-           Text("Certified\nin \nAdvanced \ncardiac",style: h9),
-          const SizedBox(height: 24),
+           Text("Certified in Advanced cardiac",style: h9),
+          
+                ],
+              ),
+             ),
+        const SizedBox(height: 24),
           FilledButton(
             onPressed: () => Navigator.push(
               context,

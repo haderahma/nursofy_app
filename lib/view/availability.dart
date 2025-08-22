@@ -35,7 +35,7 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: TableCalendar(
-                      firstDay: DateTime.utc(2020, 1, 1),
+                      firstDay: DateTime.now(),
                       lastDay: DateTime.utc(2035, 12, 31),
                       focusedDay: _focusedDay,
                       selectedDayPredicate: (d) => isSameDay(d, _selectedDay),

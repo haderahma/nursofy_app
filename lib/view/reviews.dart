@@ -69,7 +69,7 @@ class ReviewsScreen extends StatelessWidget {
             date: '2 weeks ago',
             rating: 5,
             text:
-                'Dr. Hassan provided exceptional care for my mother after her surgery. She was attentive, professional, and made sure my mother was comfortable and well‑cared for. Highly recommend!',
+                'Layla Hassan provided exceptional care for my mother after her surgery. She was attentive, professional, and made sure my mother was comfortable and well‑cared for. Highly recommend!',
                 i: "assets/images/amira.png",
                 num1: 15,
                 num2: 2,
@@ -81,7 +81,7 @@ class ReviewsScreen extends StatelessWidget {
             date: '1 month ago',
             rating: 4,
             text:
-                'Dr. Layla Hassan is a very competent and caring nurse. She helped manage my father\'s diabetes effectively and provided valuable advice. I appreciate her dedication.',
+                ' Layla Hassan is a very competent and caring nurse. She helped manage my father\'s diabetes effectively and provided valuable advice. I appreciate her dedication.',
                 i: "assets/images/omar.png",
                 num1: 8,
                 num2: 1,
