@@ -5,16 +5,20 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
 class AvailabilityScreen extends StatefulWidget {
-  const AvailabilityScreen({super.key,});
+  final DateTime selectedDate;
+
+  const AvailabilityScreen({super.key, required this.selectedDate});
+  
+ 
    
  
   @override
   State<AvailabilityScreen> createState() => _AvailabilityScreenState();
 }
-
+ 
 class _AvailabilityScreenState extends State<AvailabilityScreen> {
+  DateTime? _selectedDay; 
   DateTime _focusedDay = DateTime.now();
-  DateTime? _selectedDay;
   String? _selectedTime = '11:00';
   int _selectedPaymentMethodIndex = 0; // بطاقة الائتمان
 
@@ -22,18 +26,18 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
 
   @override
   Widget build(BuildContext context) {
-     
+    final dateStr = DateFormat('EEE, d MMM yyyy').format(widget.selectedDate);
     return Scaffold(
-      appBar: AppBar(centerTitle: true, title: const Text('Availability')),
+      appBar: AppBar(centerTitle: true, title:  Text('Availability')),
       body: ListView(
         children: [
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding:  EdgeInsets.all(16.0),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding:  EdgeInsets.symmetric(horizontal: 8.0),
                     child: TableCalendar(
                       firstDay: DateTime.now(),
                       lastDay: DateTime.utc(2035, 12, 31),
@@ -46,8 +50,6 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
                         });
                       },
                        
-                     
-              
                       calendarStyle: CalendarStyle(
                         todayDecoration: BoxDecoration(
                           color:kPrimary.withOpacity(.2),
@@ -57,10 +59,10 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
                           color:  kPrimary,
                           shape: BoxShape.circle,
                         ),
-                         defaultTextStyle: const TextStyle(color: Colors.black),
-                         weekendTextStyle: const TextStyle(color: Colors.black54),
+                         defaultTextStyle:  TextStyle(color: Colors.black),
+                         weekendTextStyle:  TextStyle(color: Colors.black54),
                       ),
-                        headerStyle: const HeaderStyle(
+                        headerStyle:  HeaderStyle(
                       formatButtonVisible: false,
                       titleCentered: true,
                       titleTextStyle: TextStyle(
@@ -89,12 +91,12 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
           
           FilledButton(
             onPressed: () {
-              final snack = 'You Booked ${_selectedTime ?? ''} on ${_selectedDay ?? ''}';
+              final snack = 'You Booked ${_selectedTime ?? ''} on $dateStr';
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(snack)));
             },
             style: FilledButton.styleFrom(backgroundColor:kPrimary ,
-              minimumSize: const Size(double.infinity, 52)),
-            child: const Text('Book Now'),
+              minimumSize:  Size(double.infinity, 52)),
+            child:  Text('Book Now'),
           ),
                 ],
               ),
@@ -116,7 +118,7 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
         });
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         decoration: BoxDecoration(
           color: Colors.grey[100],
           borderRadius: BorderRadius.circular(12),
@@ -126,9 +128,9 @@ class _AvailabilityScreenState extends State<AvailabilityScreen> {
           children: [
             Text(
               title,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              style:  TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
-            const Spacer(),
+             Spacer(),
             Radio<int>(
               value: index,
               groupValue: _selectedPaymentMethodIndex,

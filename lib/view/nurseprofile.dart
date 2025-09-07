@@ -14,42 +14,42 @@ class NurseProfileScreen extends StatelessWidget {
         title: Text('Nurse Profile',style: h8 ,),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(20),
+        padding:   EdgeInsets.all(20),
         children: [
           Column(
             children: [
               CircleAvatar(
                 radius: 80,
                 backgroundColor: cs.primaryContainer,
-                backgroundImage: const AssetImage('assets/images/nurselayla.png'),
+                backgroundImage:  AssetImage('assets/images/nurselayla.png'),
               ),
-              const SizedBox(height: 12),
+                SizedBox(height: 12),
               Text('Layla Hassan',
                   style: h5),
-              const SizedBox(height: 4),
+                SizedBox(height: 4),
               Text('Registered Nurse\nCairo, Egypt',
                   textAlign: TextAlign.center,
                   style: h9),
             ],
           ),
-          const SizedBox(height: 20),
+            SizedBox(height: 20),
           Text('About',
               style:
                   h8),
-          const SizedBox(height: 8),
+            SizedBox(height: 8),
           Text(
             'Layla Hassan is a highly experienced registered nurse with over 10 years of experience in home healthcare. She specializes in post-operative care, chronic disease management, and elderly care. Dr. Hassan is known for her compassionate approach and dedication to patient well-being.',
             style: h6,
           ),
-          const SizedBox(height: 16),
+            SizedBox(height: 16),
           Text('Qualifications',
               style:
                    h8),
-          const SizedBox(height: 26),
+            SizedBox(height: 26),
             
-          //??
+           
           Container(padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(color: const Color.fromARGB(255, 238, 241, 245),borderRadius: BorderRadius.circular(16)),
+            decoration: BoxDecoration(color:   Color.fromARGB(255, 238, 241, 245),borderRadius: BorderRadius.circular(16)),
              child: 
               Column(crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -65,13 +65,13 @@ class NurseProfileScreen extends StatelessWidget {
                 ],
               ),
              ),
-        const SizedBox(height: 24),
+          SizedBox(height: 24),
           FilledButton(
             onPressed: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => const ReviewsScreen()),
+              MaterialPageRoute(builder: (_) => ReviewsScreen()),
             ),
-            style: FilledButton.styleFrom(minimumSize: const Size(double.infinity, 50),backgroundColor: kPrimary),
+            style: FilledButton.styleFrom(minimumSize: Size(double.infinity, 50),backgroundColor: kPrimary),
             child: const Text('Reviews'),
           ),
         ],
